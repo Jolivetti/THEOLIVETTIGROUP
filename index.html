@@ -533,6 +533,46 @@
             border-bottom: 1px solid var(--border-chrome);
         }
 
+        /* Principal & Founder Executive Profile Card */
+        .founder-profile-card {
+            background: linear-gradient(155deg, #13161d 0%, #090a0d 70%, #0d0f14 100%);
+            border: 1px solid var(--border-chrome-hover);
+            border-top: 1px solid var(--specular-top);
+            border-radius: 12px;
+            padding: 2.25rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+        }
+
+        .founder-profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+        }
+
+        .founder-portrait-frame {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-chrome-hover);
+            border-top: 1px solid rgba(255, 255, 255, 0.45);
+            background: #0c0d10;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+        }
+
+        .founder-portrait-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            object-position: center top;
+            aspect-ratio: 1 / 1;
+        }
+
         .cert-badge-card {
             background: #0c0d10;
             border: 1px solid var(--border-chrome);
@@ -687,7 +727,8 @@
                 padding-top: 6rem;
                 min-height: auto;
             }
-            .scoper-container {
+            .scoper-container,
+            .founder-profile-card {
                 padding: 1.5rem;
             }
         }
@@ -1165,16 +1206,63 @@
         </div>
     </section>
 
-    <!-- 6. Credentials & Governance Pedigree Bar (#pedigree) -->
+    <!-- 6. Principal & Governance Pedigree Bar (#pedigree) -->
     <section id="pedigree" class="section-padding section-steel-band">
         <div class="container">
             <div class="row align-items-end mb-5">
                 <div class="col-lg-8">
-                    <span class="section-kicker" data-i18n="cred_kicker">// CREDENTIALS &amp; GOVERNANCE PEDIGREE</span>
+                    <span class="section-kicker" data-i18n="cred_kicker">// PRINCIPAL &amp; GOVERNANCE PEDIGREE</span>
                     <h2 class="section-heading chrome-text" data-i18n="cred_heading">Executive Discipline Backed by Hands-On Engineering</h2>
                     <p class="section-lead" data-i18n="cred_lead">
                         Combining formal computer science engineering credentials with 26+ years of enterprise operational leadership, P&amp;L governance, and vendor negotiation authority.
                     </p>
+                </div>
+            </div>
+
+            <!-- Principal & Founder Executive Card -->
+            <div class="founder-profile-card">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-md-5 col-lg-4">
+                        <div class="founder-portrait-frame">
+                            <img src="file_00000000f42481f99ecf4e305b12cf52.png"
+                                 alt="Jonathan Olivetti — Managing Principal & Founder, The Olivetti Group"
+                                 class="founder-portrait-img">
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-lg-8">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+                            <span class="platform-status-pill">
+                                <span class="eyebrow-dot"></span>
+                                <span data-i18n="founder_badge">MANAGING PRINCIPAL &amp; FOUNDER</span>
+                            </span>
+                            <span class="font-mono-tech small" style="color: var(--chrome-mid);">DECATUR, GA // EN &amp; ES</span>
+                        </div>
+
+                        <h3 class="h2 fw-bold chrome-text mb-1">Jonathan Olivetti</h3>
+                        <p class="font-mono-tech small text-white mb-3" data-i18n="founder_role">
+                            Enterprise Technology Executive &bull; AI Systems Architect
+                        </p>
+
+                        <p class="mb-4" style="color: var(--chrome-light); font-size: 0.95rem;" data-i18n="founder_bio">
+                            Jonathan Olivetti founded The Olivetti Group to give growing companies direct access to senior enterprise architecture and production AI engineering without big-firm overhead. With 26+ years leading large-scale technology strategy, proprietary software development, and business intelligence platforms, he partners directly with founders, managing partners, and executives to turn operational bottlenecks into measurable financial returns.
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            <span class="tech-pill">Enterprise Digital Strategy</span>
+                            <span class="tech-pill">Conversational Voice AI</span>
+                            <span class="tech-pill">Python / Django Systems</span>
+                            <span class="tech-pill">BI &amp; Executive Analytics</span>
+                        </div>
+
+                        <div class="d-flex flex-wrap align-items-center gap-3">
+                            <a href="#engagement-scoper" class="btn btn-chrome btn-sm" data-i18n="founder_cta">
+                                Schedule Briefing with Jonathan &rarr;
+                            </a>
+                            <a href="tel:4043942490" class="btn btn-obsidian-outline btn-sm font-mono-tech">
+                                404-394-2490
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1691,9 +1779,13 @@ Requesting confidential briefing with Jonathan Olivetti (404-394-2490).`
                 plat_2_f4: "<strong>Bilingual English &amp; Spanish Fluency:</strong> Seamlessly switches languages mid-call to serve diverse client bases without hiring additional call-center headcount.",
                 plat_2_cta: "Deploy AI Voice Receptionist &rarr;",
                 plat_2_specs: "Voice Specs",
-                cred_kicker: "// CREDENTIALS & GOVERNANCE PEDIGREE",
+                cred_kicker: "// PRINCIPAL & GOVERNANCE PEDIGREE",
                 cred_heading: "Executive Discipline Backed by Hands-On Engineering",
                 cred_lead: "Combining formal computer science engineering credentials with 26+ years of enterprise operational leadership, P&L governance, and vendor negotiation authority.",
+                founder_badge: "MANAGING PRINCIPAL & FOUNDER",
+                founder_role: "Enterprise Technology Executive &bull; AI Systems Architect",
+                founder_bio: "Jonathan Olivetti founded The Olivetti Group to give growing companies direct access to senior enterprise architecture and production AI engineering without big-firm overhead. With 26+ years leading large-scale technology strategy, proprietary software development, and business intelligence platforms, he partners directly with founders, managing partners, and executives to turn operational bottlenecks into measurable financial returns.",
+                founder_cta: "Schedule Briefing with Jonathan &rarr;",
                 c1_title: "Harvard CS50W",
                 c1_sub: "Web Programming with Python & JavaScript",
                 c2_title: "A.A.S. in Business Management",
@@ -1760,9 +1852,13 @@ Requesting confidential briefing with Jonathan Olivetti (404-394-2490).`
                 plat_2_f4: "<strong>Fluidez Bilingüe en Inglés y Español:</strong> Cambia de idioma durante la llamada para atender a toda su cartera de clientes sin contratar más personal.",
                 plat_2_cta: "Implementar Recepcionista IA &rarr;",
                 plat_2_specs: "Especificaciones de Voz",
-                cred_kicker: "// CREDENCIALES Y TRAYECTORIA DE GOBERNANZA",
+                cred_kicker: "// DIRECTOR GENERAL Y TRAYECTORIA DE GOBERNANZA",
                 cred_heading: "Disciplina Ejecutiva Respaldada por Ingeniería Práctica",
                 cred_lead: "Combinando formación formal en ingeniería de software con más de 26 años de liderazgo operativo empresarial, gobernanza financiera y negociación estratégica con proveedores.",
+                founder_badge: "SOCIO DIRECTOR Y FUNDADOR",
+                founder_role: "Ejecutivo de Tecnología Empresarial &bull; Arquitecto de Sistemas de IA",
+                founder_bio: "Jonathan Olivetti fundó The Olivetti Group para brindar a empresas en crecimiento acceso directo a arquitectura empresarial sénior e ingeniería de IA en producción sin costos excesivos de grandes consultoras. Con más de 26 años liderando estrategia tecnológica a gran escala, desarrollo de software propio y plataformas de inteligencia de negocios, trabaja directamente con fundadores y ejecutivos para convertir cuellos de botella operativos en resultados financieros medibles.",
+                founder_cta: "Agendar Sesión con Jonathan &rarr;",
                 c1_title: "Harvard CS50W",
                 c1_sub: "Programación Web con Python y JavaScript",
                 c2_title: "A.A.S. en Gestión Empresarial",
