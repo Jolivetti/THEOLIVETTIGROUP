@@ -1,0 +1,1875 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Olivetti Group | Enterprise Architecture, AI Voice &amp; Digital Transformation</title>
+    <meta name="description" content="The Olivetti Group — Executive technology advisory, 24/7 AI voice agents, scalable digital architecture, and turnkey software platforms for growing businesses.">
+
+    <!-- Google Fonts: Cinzel, Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        :root {
+            --bg-obsidian-deep: #060607;
+            --bg-obsidian-card: #0c0d10;
+            --bg-steel-panel: #13151a;
+            --chrome-bright: #ffffff;
+            --chrome-light: #e2e6ec;
+            --chrome-mid: #8f96a3;
+            --chrome-dark: #525866;
+            --border-chrome: rgba(226, 230, 236, 0.16);
+            --border-chrome-hover: rgba(255, 255, 255, 0.44);
+            --specular-top: rgba(255, 255, 255, 0.36);
+            --metallic-gradient: linear-gradient(180deg, #ffffff 0%, #c8cfd8 48%, #7a828e 52%, #e2e6ec 100%);
+            --steel-button-gradient: linear-gradient(180deg, #f6f8fb 0%, #d2d8e2 48%, #9aa3b2 52%, #e2e6ec 100%);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-obsidian-deep);
+            color: var(--chrome-light);
+            font-size: 0.94rem;
+            line-height: 1.65;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 0),
+                radial-gradient(circle at 20% 0%, rgba(45, 52, 66, 0.22) 0%, transparent 55%),
+                radial-gradient(circle at 85% 40%, rgba(30, 35, 45, 0.25) 0%, transparent 60%);
+            background-size: 22px 22px, 100% 100%, 100% 100%;
+        }
+
+        .font-serif-exec {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 0.04em;
+        }
+
+        .font-mono-tech {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .chrome-text {
+            background: var(--metallic-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Sticky Obsidian Glass Navbar */
+        .navbar-exec {
+            background: rgba(6, 6, 7, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-chrome);
+            padding: 0.8rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-exec.scrolled {
+            background: rgba(6, 6, 7, 0.96);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85);
+            border-bottom-color: var(--border-chrome-hover);
+        }
+
+        .brand-logo-nav {
+            height: 44px;
+            width: auto;
+            mix-blend-mode: lighten;
+            filter: contrast(1.08) brightness(1.04);
+            transition: transform 0.25s ease;
+        }
+
+        .brand-logo-nav:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-link-exec {
+            color: var(--chrome-mid) !important;
+            font-size: 0.84rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            padding: 0.5rem 0.9rem !important;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link-exec:hover,
+        .nav-link-exec:focus {
+            color: var(--chrome-bright) !important;
+        }
+
+        /* Bilingual Toggle */
+        .lang-toggle-group {
+            display: inline-flex;
+            background: #0c0d10;
+            border: 1px solid var(--border-chrome);
+            border-radius: 5px;
+            padding: 2px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--chrome-mid);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.28rem 0.55rem;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--steel-button-gradient);
+            color: #060607;
+        }
+
+        /* Brushed-Chrome & Obsidian Buttons */
+        .btn-chrome {
+            background: var(--steel-button-gradient);
+            color: #060607;
+            font-weight: 700;
+            font-size: 0.84rem;
+            letter-spacing: 0.03em;
+            border: 1px solid #ffffff;
+            border-radius: 6px;
+            padding: 0.75rem 1.45rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.85);
+            transition: all 0.25s ease;
+        }
+
+        .btn-chrome:hover {
+            transform: translateY(-2px);
+            color: #000000;
+            box-shadow: 0 10px 26px rgba(255, 255, 255, 0.14), inset 0 1px 0 #ffffff;
+        }
+
+        .btn-obsidian-outline {
+            background: rgba(12, 13, 16, 0.85);
+            color: var(--chrome-bright);
+            font-weight: 600;
+            font-size: 0.84rem;
+            letter-spacing: 0.02em;
+            border: 1px solid var(--border-chrome-hover);
+            border-radius: 6px;
+            padding: 0.75rem 1.45rem;
+            transition: all 0.25s ease;
+        }
+
+        .btn-obsidian-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #ffffff;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            padding-top: 7.25rem;
+            padding-bottom: 4.5rem;
+            border-bottom: 1px solid var(--border-chrome);
+            overflow: hidden;
+        }
+
+        #hero-network-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.65;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.55rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.73rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--chrome-light);
+            background: rgba(19, 21, 26, 0.92);
+            border: 1px solid var(--border-chrome-hover);
+            border-radius: 4px;
+            padding: 0.4rem 0.85rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .eyebrow-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 0 8px #ffffff;
+            display: inline-block;
+        }
+
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-weight: 800;
+            font-size: clamp(2.05rem, 3.8vw, 3.35rem);
+            line-height: 1.14;
+            margin-bottom: 1.35rem;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-subtitle {
+            color: var(--chrome-mid);
+            font-size: 1.03rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        /* Framed Brushed-Steel Hero Emblem Plate */
+        .hero-brand-plate {
+            background: linear-gradient(155deg, #14171e 0%, #070709 65%, #0e1015 100%);
+            border: 1px solid var(--border-chrome-hover);
+            border-top: 1px solid rgba(255, 255, 255, 0.52);
+            border-radius: 12px;
+            padding: 2.25rem 1.85rem 1.65rem;
+            position: relative;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.92), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+        }
+
+        .hero-brand-plate::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+        }
+
+        .hero-logo-img {
+            width: 100%;
+            max-height: 215px;
+            object-fit: contain;
+            mix-blend-mode: lighten;
+            filter: contrast(1.12) brightness(1.06);
+            display: block;
+            margin: 0 auto 1.4rem;
+        }
+
+        .architecture-telemetry-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+            padding-top: 1.15rem;
+            border-top: 1px solid var(--border-chrome);
+            text-align: center;
+        }
+
+        .telemetry-item small {
+            display: block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.64rem;
+            color: var(--chrome-mid);
+            letter-spacing: 0.08em;
+        }
+
+        .telemetry-item span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--chrome-bright);
+        }
+
+        /* KPI Strip */
+        .metrics-strip {
+            background: #090a0d;
+            border-bottom: 1px solid var(--border-chrome);
+            padding: 3.25rem 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(180deg, #101217 0%, #090a0c 100%);
+            border: 1px solid var(--border-chrome);
+            border-top: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 8px;
+            padding: 1.65rem 1.4rem;
+            height: 100%;
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .metric-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-chrome-hover);
+        }
+
+        .metric-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 2.05rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 0.55rem;
+        }
+
+        .metric-label {
+            color: var(--chrome-mid);
+            font-size: 0.84rem;
+            line-height: 1.45;
+        }
+
+        /* Section Typography */
+        .section-padding {
+            padding: 5.25rem 0;
+        }
+
+        .section-kicker {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: var(--chrome-mid);
+            margin-bottom: 0.65rem;
+        }
+
+        .section-heading {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: clamp(1.65rem, 2.8vw, 2.4rem);
+            margin-bottom: 0.9rem;
+            line-height: 1.2;
+        }
+
+        .section-lead {
+            color: var(--chrome-mid);
+            font-size: 0.98rem;
+            max-width: 720px;
+        }
+
+        /* Core Capability Cards */
+        .practice-card {
+            background: linear-gradient(165deg, #111319 0%, #090a0d 100%);
+            border: 1px solid var(--border-chrome);
+            border-top: 1px solid rgba(255, 255, 255, 0.26);
+            border-radius: 10px;
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .practice-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-chrome-hover);
+            box-shadow: 0 22px 48px rgba(0, 0, 0, 0.85), 0 0 24px rgba(226, 230, 236, 0.08);
+        }
+
+        .practice-icon-wrap {
+            width: 46px;
+            height: 46px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-chrome-hover);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--chrome-bright);
+            margin-bottom: 1.35rem;
+        }
+
+        .practice-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--chrome-mid);
+            letter-spacing: 0.08em;
+        }
+
+        .practice-title {
+            font-size: 1.18rem;
+            font-weight: 700;
+            color: var(--chrome-bright);
+            margin-bottom: 0.75rem;
+        }
+
+        .practice-desc {
+            color: var(--chrome-mid);
+            font-size: 0.91rem;
+            margin-bottom: 1.35rem;
+        }
+
+        .practice-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tech-pill {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.69rem;
+            color: var(--chrome-light);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-chrome);
+            border-radius: 4px;
+            padding: 0.24rem 0.58rem;
+        }
+
+        .btn-spec-trigger {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-chrome);
+            color: var(--chrome-bright);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            padding: 0.65rem 1rem;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-spec-trigger:hover {
+            background: var(--steel-button-gradient);
+            color: #060607;
+            border-color: #ffffff;
+        }
+
+        /* Proprietary Software & Turnkey Platforms */
+        .platform-flagship-card {
+            background: linear-gradient(155deg, #151820 0%, #090a0d 65%, #0e1015 100%);
+            border: 1px solid var(--border-chrome-hover);
+            border-top: 1px solid rgba(255, 255, 255, 0.52);
+            border-radius: 10px;
+            padding: 2.25rem;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .platform-flagship-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 30px 65px rgba(0, 0, 0, 0.92), 0 0 30px rgba(226, 230, 236, 0.1);
+        }
+
+        .platform-flagship-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 8%;
+            right: 8%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ffffff, transparent);
+        }
+
+        .platform-status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.32rem 0.75rem;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-chrome-hover);
+            color: var(--chrome-bright);
+        }
+
+        .platform-feature-list li {
+            position: relative;
+            padding-left: 1.35rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--chrome-light);
+        }
+
+        .platform-feature-list li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            top: 0.06rem;
+            font-size: 0.7rem;
+            color: var(--chrome-bright);
+        }
+
+        .arch-blueprint-panel {
+            background: #060607;
+            border: 1px solid var(--border-chrome);
+            border-radius: 6px;
+            padding: 1.1rem 1.2rem;
+            margin-top: 1.35rem;
+            margin-bottom: 1.55rem;
+        }
+
+        /* Credentials & Governance Pedigree Band */
+        .section-steel-band {
+            background: linear-gradient(180deg, #090a0d 0%, #0d0f14 50%, #090a0d 100%);
+            border-top: 1px solid var(--border-chrome);
+            border-bottom: 1px solid var(--border-chrome);
+        }
+
+        .cert-badge-card {
+            background: #0c0d10;
+            border: 1px solid var(--border-chrome);
+            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 8px;
+            padding: 1.3rem 1.25rem;
+            height: 100%;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            transition: border-color 0.25s ease, transform 0.25s ease;
+        }
+
+        .cert-badge-card:hover {
+            border-color: var(--border-chrome-hover);
+            transform: translateY(-2px);
+        }
+
+        .cert-diamond {
+            color: var(--chrome-bright);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Interactive Engagement Scoper */
+        .scoper-container {
+            background: linear-gradient(155deg, #111319 0%, #08090c 100%);
+            border: 1px solid var(--border-chrome-hover);
+            border-top: 1px solid var(--specular-top);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 28px 65px rgba(0, 0, 0, 0.88);
+        }
+
+        .scope-checkbox-card {
+            background: #07080a;
+            border: 1px solid var(--border-chrome);
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+            cursor: pointer;
+            height: 100%;
+            transition: all 0.2s ease;
+        }
+
+        .scope-checkbox-card:hover {
+            border-color: var(--border-chrome-hover);
+        }
+
+        .scope-checkbox-card.selected {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: #ffffff;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+        }
+
+        .scope-scale-btn {
+            background: #07080a;
+            border: 1px solid var(--border-chrome);
+            color: var(--chrome-mid);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 0.65rem 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .scope-scale-btn:hover {
+            border-color: var(--border-chrome-hover);
+            color: #ffffff;
+        }
+
+        .scope-scale-btn.active {
+            background: var(--steel-button-gradient);
+            color: #060607;
+            border-color: #ffffff;
+        }
+
+        .form-control-exec {
+            background: #060607;
+            border: 1px solid var(--border-chrome);
+            color: #ffffff;
+            border-radius: 6px;
+            padding: 0.68rem 0.9rem;
+            font-size: 0.88rem;
+        }
+
+        .form-control-exec::placeholder {
+            color: #5b6270;
+        }
+
+        .form-control-exec:focus {
+            background: #060607;
+            border-color: var(--chrome-bright);
+            color: #ffffff;
+            box-shadow: 0 0 0 0.2rem rgba(226, 230, 236, 0.16);
+        }
+
+        .brief-output-box {
+            background: #050506;
+            border: 1px solid var(--border-chrome);
+            border-left: 3px solid #ffffff;
+            border-radius: 6px;
+            padding: 1.25rem;
+        }
+
+        /* Dark Obsidian Footer */
+        .footer-obsidian {
+            background: #050506;
+            border-top: 1px solid var(--border-chrome);
+            padding: 4rem 0 2.5rem;
+        }
+
+        .footer-brand-logo {
+            height: 62px;
+            width: auto;
+            mix-blend-mode: lighten;
+            filter: contrast(1.1) brightness(1.05);
+        }
+
+        .footer-divider {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-chrome);
+            color: var(--chrome-mid);
+            font-size: 0.8rem;
+        }
+
+        /* Modal Customization */
+        .modal-exec .modal-content {
+            background: #0e1014;
+            color: var(--chrome-light);
+            border: 1px solid var(--border-chrome-hover);
+            border-top: 1px solid var(--specular-top);
+            border-radius: 10px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.94);
+        }
+
+        .modal-exec .modal-header {
+            border-bottom: 1px solid var(--border-chrome);
+            padding: 1.35rem 1.75rem;
+        }
+
+        .modal-exec .modal-footer {
+            border-top: 1px solid var(--border-chrome);
+            padding: 1.1rem 1.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding-top: 6rem;
+                min-height: auto;
+            }
+            .scoper-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Sticky Top Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-exec" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="#top">
+                <img src="51507_2.png"
+                     alt="The Olivetti Group"
+                     class="brand-logo-nav"
+                     onerror="this.style.display='none'; document.getElementById('nav-svg-fallback').style.display='flex';">
+
+                <!-- Inline Brushed-Chrome Ouroboros SVG Fallback -->
+                <div id="nav-svg-fallback" style="display:none; align-items:center; gap:12px;">
+                    <svg width="38" height="38" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="navChromeGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#FFFFFF"/>
+                                <stop offset="48%" stop-color="#B8C0CC"/>
+                                <stop offset="52%" stop-color="#6E7685"/>
+                                <stop offset="100%" stop-color="#E5E9F0"/>
+                            </linearGradient>
+                        </defs>
+                        <circle cx="32" cy="32" r="24" stroke="url(#navChromeGrad)" stroke-width="5.5" stroke-dasharray="134 17"/>
+                        <path d="M46 15L55 11L50 22Z" fill="#E5E9F0"/>
+                    </svg>
+                    <div class="lh-1">
+                        <span class="font-serif-exec d-block text-white" style="font-size:0.62rem; letter-spacing:0.25em;">THE</span>
+                        <span class="font-serif-exec fw-bold chrome-text" style="font-size:1.05rem;">OLIVETTI</span>
+                        <span class="font-serif-exec d-block text-end" style="font-size:0.62rem; color:#8f96a3; letter-spacing:0.15em;">Group</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="d-flex align-items-center gap-2 order-lg-3">
+                <!-- Live EN | ES Bilingual Toggle -->
+                <div class="lang-toggle-group me-1" role="group" aria-label="Language Switcher">
+                    <button type="button" class="lang-btn active" id="btn-lang-en" onclick="setLanguage('en')">EN</button>
+                    <button type="button" class="lang-btn" id="btn-lang-es" onclick="setLanguage('es')">ES</button>
+                </div>
+
+                <a href="#engagement-scoper" class="btn btn-chrome btn-sm d-none d-sm-inline-block px-3 py-2" data-i18n="nav_cta">
+                    Scope Engagement
+                </a>
+
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarExecContent" aria-controls="navbarExecContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse order-lg-2" id="navbarExecContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-exec" href="#capabilities" data-i18n="nav_capabilities">Capabilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-exec" href="#platforms" data-i18n="nav_platforms">Proprietary Platforms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-exec" href="#pedigree" data-i18n="nav_pedigree">Executive Pedigree</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-link-exec" href="#engagement-scoper" data-i18n="nav_scoper">Scope Engagement</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <header id="top" class="hero-section">
+        <canvas id="hero-network-canvas"></canvas>
+
+        <div class="container hero-content">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="eyebrow-badge">
+                        <span class="eyebrow-dot"></span>
+                        <span data-i18n="hero_badge">Executive Technology Advisory &amp; AI Automation</span>
+                    </div>
+
+                    <h1 class="hero-title chrome-text" data-i18n="hero_title">
+                        Translating Operational Bottlenecks Into Scalable Technological Gains
+                    </h1>
+
+                    <p class="hero-subtitle" data-i18n="hero_subtitle">
+                        The Olivetti Group advises growing small-to-midsize businesses on digital transformation, 24/7 AI voice receptionists, workflow automation, and resilient cloud architecture—turning operational growing pains into measurable bottom-line ROI.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#engagement-scoper" class="btn btn-chrome" data-i18n="hero_btn_primary">
+                            Scope an Engagement
+                        </a>
+                        <a href="#platforms" class="btn btn-obsidian-outline" data-i18n="hero_btn_secondary">
+                            Explore AI &amp; Software Platforms
+                        </a>
+                    </div>
+
+                    <div class="mt-4 pt-2 d-flex flex-wrap align-items-center gap-4 small font-mono-tech" style="color: var(--chrome-mid);">
+                        <span>// DECATUR, GA</span>
+                        <span>// BILINGUAL PRACTICE (EN / ES)</span>
+                        <span>// TURNKEY EXECUTION</span>
+                    </div>
+                </div>
+
+                <!-- Right Column: Beveled Brushed-Steel Emblem Showcase Card -->
+                <div class="col-lg-6">
+                    <div class="hero-brand-plate">
+                        <img src="51507_2.png"
+                             alt="The Olivetti Group — Metallic Ouroboros Emblem"
+                             class="hero-logo-img"
+                             onerror="this.style.display='none'; document.getElementById('hero-emblem-fallback').style.display='block';">
+
+                        <!-- High-Precision Brushed-Chrome SVG Fallback -->
+                        <div id="hero-emblem-fallback" style="display:none; text-align:center; padding: 1.5rem 0.5rem;">
+                            <svg width="100%" height="145" viewBox="0 0 560 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="heroSteelFill" x1="0" y1="15" x2="0" y2="135" gradientUnits="userSpaceOnUse">
+                                        <stop offset="0%" stop-color="#FFFFFF"/>
+                                        <stop offset="46%" stop-color="#C8CFD8"/>
+                                        <stop offset="52%" stop-color="#7A828E"/>
+                                        <stop offset="100%" stop-color="#E2E6EC"/>
+                                    </linearGradient>
+                                </defs>
+                                <circle cx="72" cy="78" r="44" stroke="url(#heroSteelFill)" stroke-width="13" stroke-dasharray="242 32"/>
+                                <path d="M98 34 C112 30, 120 42, 108 54 L92 48 Z" fill="url(#heroSteelFill)"/>
+                                <text x="132" y="34" fill="url(#heroSteelFill)" font-family="Cinzel, serif" font-weight="700" font-size="20" letter-spacing="5">THE</text>
+                                <text x="130" y="102" fill="url(#heroSteelFill)" font-family="Cinzel, serif" font-weight="800" font-size="68" letter-spacing="4">LIVETTI</text>
+                                <text x="415" y="134" fill="url(#heroSteelFill)" font-family="Cinzel, serif" font-weight="700" font-size="28" letter-spacing="2">Group</text>
+                            </svg>
+                        </div>
+
+                        <div class="architecture-telemetry-bar">
+                            <div class="telemetry-item">
+                                <small>AI VOICE &amp; OPS</small>
+                                <span>24/7 AUTONOMOUS</span>
+                            </div>
+                            <div class="telemetry-item">
+                                <small>ARCHITECTURE</small>
+                                <span>CLOUD &amp; API SCALE</span>
+                            </div>
+                            <div class="telemetry-item">
+                                <small>ADVISORY REACH</small>
+                                <span>US &amp; LATAM (EN/ES)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Executive Scale & Track Record Strip (4 KPI Cards) -->
+    <section class="metrics-strip" aria-label="Executive Scale and Track Record">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="metric-card">
+                        <div class="metric-value chrome-text">$1B+</div>
+                        <div class="metric-label" data-i18n="metric_1">Annual Enterprise Revenue Supported — Prior Executive Pedigree</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="metric-card">
+                        <div class="metric-value chrome-text">26+ Yrs</div>
+                        <div class="metric-label" data-i18n="metric_2">Enterprise Technology &amp; Digital Transformation Leadership</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="metric-card">
+                        <div class="metric-value chrome-text">1,000+</div>
+                        <div class="metric-label" data-i18n="metric_3">Distributed Field &amp; Operational Endpoints Architected</div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="metric-card">
+                        <div class="metric-value chrome-text">24/7</div>
+                        <div class="metric-label" data-i18n="metric_4">Autonomous AI Voice &amp; Workflow Automation Uptime</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Core Consultancy Capabilities (4 Interactive Cards with Click-to-Inspect Deliverable Modals) -->
+    <section id="capabilities" class="section-padding">
+        <div class="container">
+            <div class="row align-items-end mb-5">
+                <div class="col-lg-8">
+                    <span class="section-kicker" data-i18n="cap_kicker">// CORE CONSULTANCY CAPABILITIES</span>
+                    <h2 class="section-heading chrome-text" data-i18n="cap_heading">Practical AI &amp; Architecture Built for Growing Companies</h2>
+                    <p class="section-lead" data-i18n="cap_lead">
+                        We bridge executive business judgment with modern AI and cloud engineering—diagnosing operational bottlenecks and implementing high-ROI solutions without enterprise bloat.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <span class="font-mono-tech small" style="color: var(--chrome-light);">[ CLICK ANY PRACTICE TO INSPECT DELIVERABLES ]</span>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Practice 01 -->
+                <div class="col-md-6">
+                    <div class="practice-card">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="practice-icon-wrap">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                    </svg>
+                                </div>
+                                <span class="practice-number">01 // VOICE AI</span>
+                            </div>
+                            <h3 class="practice-title" data-i18n="p1_title">AI Voice Agents &amp; Customer Care Automation</h3>
+                            <p class="practice-desc" data-i18n="p1_desc">
+                                Custom inbound and outbound conversational AI receptionists (Vapi-powered) that answer calls 24/7, qualify leads, schedule appointments, resolve Tier-1 customer inquiries, and escalate urgent tickets to cut front-desk overhead.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="practice-tags">
+                                <span class="tech-pill">Vapi Voice AI</span>
+                                <span class="tech-pill">24/7 Call Reception</span>
+                                <span class="tech-pill">Lead Qualification</span>
+                                <span class="tech-pill">Bilingual EN/ES</span>
+                            </div>
+                            <button type="button" class="btn-spec-trigger" onclick="openSpecModal(0)">
+                                <span data-i18n="btn_inspect">INSPECT DELIVERABLES</span>
+                                <span>&rarr;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Practice 02 -->
+                <div class="col-md-6">
+                    <div class="practice-card">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="practice-icon-wrap">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        <line x1="11" y1="8" x2="11" y2="14"></line>
+                                        <line x1="8" y1="11" x2="14" y2="11"></line>
+                                    </svg>
+                                </div>
+                                <span class="practice-number">02 // DIAGNOSTICS</span>
+                            </div>
+                            <h3 class="practice-title" data-i18n="p2_title">Digital Transformation &amp; Operational Diagnostics</h3>
+                            <p class="practice-desc" data-i18n="p2_desc">
+                                Executive audits for growing businesses to eliminate disconnected spreadsheets, duplicate data entry, and manual handoffs—delivering a clear, prioritized modernization roadmap calibrated to real ROI.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="practice-tags">
+                                <span class="tech-pill">Bottleneck Audit</span>
+                                <span class="tech-pill">Modernization Roadmap</span>
+                                <span class="tech-pill">Vendor Selection</span>
+                            </div>
+                            <button type="button" class="btn-spec-trigger" onclick="openSpecModal(1)">
+                                <span data-i18n="btn_inspect">INSPECT DELIVERABLES</span>
+                                <span>&rarr;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Practice 03 -->
+                <div class="col-md-6">
+                    <div class="practice-card">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="practice-icon-wrap">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                        <polyline points="2 17 12 22 22 17"></polyline>
+                                        <polyline points="2 12 12 17 22 12"></polyline>
+                                    </svg>
+                                </div>
+                                <span class="practice-number">03 // SCALABILITY</span>
+                            </div>
+                            <h3 class="practice-title" data-i18n="p3_title">Enterprise Architecture &amp; Scalability</h3>
+                            <p class="practice-desc" data-i18n="p3_desc">
+                                Designing resilient cloud, database, and API integrations so small and midsize companies can double their client volume and headcount without breaking daily operations or outgrowing their core stack.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="practice-tags">
+                                <span class="tech-pill">Cloud Architecture</span>
+                                <span class="tech-pill">API Integration</span>
+                                <span class="tech-pill">Database Design</span>
+                            </div>
+                            <button type="button" class="btn-spec-trigger" onclick="openSpecModal(2)">
+                                <span data-i18n="btn_inspect">INSPECT DELIVERABLES</span>
+                                <span>&rarr;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Practice 04 -->
+                <div class="col-md-6">
+                    <div class="practice-card">
+                        <div>
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="practice-icon-wrap">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="16 18 22 12 16 6"></polyline>
+                                        <polyline points="8 6 2 12 8 18"></polyline>
+                                    </svg>
+                                </div>
+                                <span class="practice-number">04 // AUTOMATION</span>
+                            </div>
+                            <h3 class="practice-title" data-i18n="p4_title">Custom AI &amp; Workflow Automation</h3>
+                            <p class="practice-desc" data-i18n="p4_desc">
+                                Practical AI deployment—automated document processing, internal knowledge-base assistants, and intelligent ticket routing that eliminate repetitive administrative labor without requiring an in-house IT department.
+                            </p>
+                        </div>
+                        <div>
+                            <div class="practice-tags">
+                                <span class="tech-pill">Document AI</span>
+                                <span class="tech-pill">Knowledge Assistants</span>
+                                <span class="tech-pill">Python / JS Automation</span>
+                            </div>
+                            <button type="button" class="btn-spec-trigger" onclick="openSpecModal(3)">
+                                <span data-i18n="btn_inspect">INSPECT DELIVERABLES</span>
+                                <span>&rarr;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Proprietary Software & Turnkey Platforms (#platforms) -->
+    <section id="platforms" class="section-padding" style="border-top: 1px solid var(--border-chrome); background: radial-gradient(circle at 50% 0%, rgba(28, 32, 40, 0.35) 0%, rgba(6, 6, 7, 0.96) 75%);">
+        <div class="container">
+            <div class="row align-items-end mb-5">
+                <div class="col-lg-8">
+                    <span class="section-kicker" data-i18n="plat_kicker">// PROPRIETARY SOFTWARE &amp; TURNKEY PLATFORMS</span>
+                    <h2 class="section-heading chrome-text" data-i18n="plat_heading">Production-Ready Software &amp; Autonomous Voice Systems</h2>
+                    <p class="section-lead" data-i18n="plat_lead">
+                        We don't just advise from slide decks—we engineer, deploy, and license turnkey software platforms proven in live commercial environments.
+                    </p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <span class="font-mono-tech small" style="color: var(--chrome-light);">[ TURNKEY LICENSING &amp; DEPLOYMENT ]</span>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Flagship Product 01: Olivetti Legal CRM & Case Lifecycle Engine -->
+                <div class="col-lg-6">
+                    <div class="platform-flagship-card d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                                <span class="platform-status-pill">
+                                    <span class="eyebrow-dot"></span>
+                                    <span data-i18n="plat_1_badge">FLAGSHIP PRODUCT // 01</span>
+                                </span>
+                                <span class="font-mono-tech small" style="color: var(--chrome-mid);">PYTHON / DJANGO ENGINE</span>
+                            </div>
+
+                            <h3 class="h3 fw-bold chrome-text mb-2" data-i18n="plat_1_title">
+                                Olivetti Legal CRM &amp; Case Lifecycle Engine
+                            </h3>
+                            <p class="mb-4" style="color: var(--chrome-mid); font-size: 0.94rem;" data-i18n="plat_1_desc">
+                                Production-built Python/Django platform engineered for law firms and specialized practices—streamlining bilingual client intake, insurance claims, and end-to-end case milestones without bloated legacy software.
+                            </p>
+
+                            <ul class="list-unstyled platform-feature-list mb-0">
+                                <li data-i18n="plat_1_f1">
+                                    <strong>Bilingual Client Intake (EN/ES):</strong> Structured prospective client qualification and seamless English/Spanish intake portals.
+                                </li>
+                                <li data-i18n="plat_1_f2">
+                                    <strong>End-to-End Insurance &amp; Property Damage Tracking:</strong> Milestone management from initial incident through medical treatment, adjuster negotiation, and settlement.
+                                </li>
+                                <li data-i18n="plat_1_f3">
+                                    <strong>Automated Client Communications:</strong> Proactive SMS/email status updates that reduce inbound "what's my case status?" calls.
+                                </li>
+                                <li data-i18n="plat_1_f4">
+                                    <strong>Role-Based Security &amp; Licensing:</strong> Granular permissions for managing partners, attorneys, and paralegals—available for turnkey licensing or white-label deployment.
+                                </li>
+                            </ul>
+
+                            <div class="arch-blueprint-panel">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                                    <span class="font-mono-tech small text-white">DEPLOYMENT MODELS</span>
+                                    <span class="font-mono-tech small" style="color: var(--chrome-mid);">TURNKEY // WHITE-LABEL</span>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-pill">Python / Django</span>
+                                    <span class="tech-pill">Bilingual EN/ES Intake</span>
+                                    <span class="tech-pill">Insurance &amp; Property Claims</span>
+                                    <span class="tech-pill">Role-Based Access</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap align-items-center gap-3">
+                            <button type="button" class="btn btn-chrome" onclick="selectPlatformTrack('Olivetti Legal CRM Licensing')">
+                                <span data-i18n="plat_1_cta">License Olivetti Legal CRM &rarr;</span>
+                            </button>
+                            <button type="button" class="btn btn-obsidian-outline" onclick="openSpecModal(4)">
+                                <span data-i18n="plat_1_specs">System Architecture</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flagship Product 02: Autonomous AI Call Center & Voice Receptionist -->
+                <div class="col-lg-6">
+                    <div class="platform-flagship-card d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                                <span class="platform-status-pill">
+                                    <span class="eyebrow-dot"></span>
+                                    <span data-i18n="plat_2_badge">FLAGSHIP PRODUCT // 02</span>
+                                </span>
+                                <span class="font-mono-tech small" style="color: var(--chrome-mid);">VAPI CONVERSATIONAL AI</span>
+                            </div>
+
+                            <h3 class="h3 fw-bold chrome-text mb-2" data-i18n="plat_2_title">
+                                Autonomous AI Call Center &amp; Voice Receptionist
+                            </h3>
+                            <p class="mb-4" style="color: var(--chrome-mid); font-size: 0.94rem;" data-i18n="plat_2_desc">
+                                Turnkey conversational voice AI deployment tailored to service businesses, medical offices, contractors, and legal practices to capture missed calls, automate customer support, and slash front-desk overhead.
+                            </p>
+
+                            <ul class="list-unstyled platform-feature-list mb-0">
+                                <li data-i18n="plat_2_f1">
+                                    <strong>24/7 Instant Inbound Call Answering:</strong> Natural-sounding voice agents trained on your company's exact services, pricing policies, and FAQs—zero hold times.
+                                </li>
+                                <li data-i18n="plat_2_f2">
+                                    <strong>Automated Appointment Booking &amp; Lead Capture:</strong> Real-time calendar scheduling, caller qualification, and instant CRM/SMS summaries sent to your team.
+                                </li>
+                                <li data-i18n="plat_2_f3">
+                                    <strong>Tier-1 Customer Care &amp; Smart Escalation:</strong> Resolves routine customer inquiries autonomously while warm-transferring urgent calls to on-call staff.
+                                </li>
+                                <li data-i18n="plat_2_f4">
+                                    <strong>Bilingual English &amp; Spanish Fluency:</strong> Seamlessly switches languages mid-call to serve diverse client bases without hiring additional call-center headcount.
+                                </li>
+                            </ul>
+
+                            <div class="arch-blueprint-panel">
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-2">
+                                    <span class="font-mono-tech small text-white">IDEAL FOR</span>
+                                    <span class="font-mono-tech small" style="color: var(--chrome-mid);">FAST DEPLOYMENT</span>
+                                </div>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tech-pill">Law Firms</span>
+                                    <span class="tech-pill">Medical &amp; Dental Offices</span>
+                                    <span class="tech-pill">Home &amp; Commercial Contractors</span>
+                                    <span class="tech-pill">Service Businesses</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex flex-wrap align-items-center gap-3">
+                            <button type="button" class="btn btn-chrome" onclick="selectPlatformTrack('AI Voice Agent / Call Center')">
+                                <span data-i18n="plat_2_cta">Deploy AI Voice Receptionist &rarr;</span>
+                            </button>
+                            <button type="button" class="btn btn-obsidian-outline" onclick="openSpecModal(0)">
+                                <span data-i18n="plat_2_specs">Voice Specs</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Credentials & Governance Pedigree Bar (#pedigree) -->
+    <section id="pedigree" class="section-padding section-steel-band">
+        <div class="container">
+            <div class="row align-items-end mb-5">
+                <div class="col-lg-8">
+                    <span class="section-kicker" data-i18n="cred_kicker">// CREDENTIALS &amp; GOVERNANCE PEDIGREE</span>
+                    <h2 class="section-heading chrome-text" data-i18n="cred_heading">Executive Discipline Backed by Hands-On Engineering</h2>
+                    <p class="section-lead" data-i18n="cred_lead">
+                        Combining formal computer science engineering credentials with 26+ years of enterprise operational leadership, P&amp;L governance, and vendor negotiation authority.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="cert-badge-card">
+                        <div class="cert-diamond">&#9670;</div>
+                        <div>
+                            <div class="fw-bold text-white mb-1" data-i18n="c1_title">Harvard CS50W</div>
+                            <div class="font-mono-tech small" style="color: var(--chrome-mid);" data-i18n="c1_sub">Web Programming with Python &amp; JavaScript</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="cert-badge-card">
+                        <div class="cert-diamond">&#9670;</div>
+                        <div>
+                            <div class="fw-bold text-white mb-1" data-i18n="c2_title">A.A.S. in Business Management</div>
+                            <div class="font-mono-tech small" style="color: var(--chrome-mid);" data-i18n="c2_sub">Gwinnett Technical College</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="cert-badge-card">
+                        <div class="cert-diamond">&#9670;</div>
+                        <div>
+                            <div class="fw-bold text-white mb-1" data-i18n="c3_title">Bilingual Executive Leadership</div>
+                            <div class="font-mono-tech small" style="color: var(--chrome-mid);" data-i18n="c3_sub">Fluent English &amp; Spanish Operations</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="cert-badge-card">
+                        <div class="cert-diamond">&#9670;</div>
+                        <div>
+                            <div class="fw-bold text-white mb-1" data-i18n="c4_title">Enterprise Governance &amp; Vendor Negotiation</div>
+                            <div class="font-mono-tech small" style="color: var(--chrome-mid);" data-i18n="c4_sub">26+ Years Experience ($1B+ Scale Pedigree)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Interactive Engagement Scoper & Contact Section -->
+    <section id="engagement-scoper" class="section-padding">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8">
+                    <span class="section-kicker" data-i18n="scope_kicker">// INTERACTIVE ENGAGEMENT SCOPER</span>
+                    <h2 class="section-heading chrome-text" data-i18n="scope_heading">Configure Your Executive Advisory &amp; AI Brief</h2>
+                    <p class="section-lead" data-i18n="scope_lead">
+                        Select your primary engagement track, company size, and operational bottleneck below to generate a structured executive brief and dispatch it directly to Jonathan Olivetti.
+                    </p>
+                </div>
+            </div>
+
+            <div class="scoper-container">
+                <div class="row g-5">
+                    <!-- Left Controls -->
+                    <div class="col-lg-7">
+                        <label class="font-mono-tech small text-uppercase mb-3 d-block" style="color: var(--chrome-bright);" data-i18n="scope_step1">
+                            1. Select Primary Engagement Track
+                        </label>
+                        <div class="row g-2 mb-4" id="track-selector-grid">
+                            <div class="col-sm-6">
+                                <div class="scope-checkbox-card selected" data-track="AI Voice Agent / Call Center" onclick="selectTrack(this)">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span class="fw-semibold text-white small">AI Voice Agent / Call Center</span>
+                                        <span class="font-mono-tech small" style="color:var(--chrome-mid);">01</span>
+                                    </div>
+                                    <small class="d-block" style="font-size:0.77rem; color:var(--chrome-mid);">24/7 inbound/outbound Vapi voice receptionist &amp; customer care</small>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="scope-checkbox-card" data-track="Digital Transformation Audit" onclick="selectTrack(this)">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span class="fw-semibold text-white small">Digital Transformation Audit</span>
+                                        <span class="font-mono-tech small" style="color:var(--chrome-mid);">02</span>
+                                    </div>
+                                    <small class="d-block" style="font-size:0.77rem; color:var(--chrome-mid);">Operational bottleneck diagnosis &amp; modernization roadmap</small>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="scope-checkbox-card" data-track="Architecture & Scalability" onclick="selectTrack(this)">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span class="fw-semibold text-white small">Architecture &amp; Scalability</span>
+                                        <span class="font-mono-tech small" style="color:var(--chrome-mid);">03</span>
+                                    </div>
+                                    <small class="d-block" style="font-size:0.77rem; color:var(--chrome-mid);">Resilient cloud, database &amp; API integrations for rapid growth</small>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="scope-checkbox-card" data-track="Olivetti Legal CRM Licensing" onclick="selectTrack(this)">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span class="fw-semibold text-white small">Olivetti Legal CRM Licensing</span>
+                                        <span class="font-mono-tech small" style="color:var(--chrome-mid);">04</span>
+                                    </div>
+                                    <small class="d-block" style="font-size:0.77rem; color:var(--chrome-mid);">Turnkey or white-label bilingual legal intake &amp; case CRM</small>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="scope-checkbox-card" data-track="Custom AI & Web Engineering" onclick="selectTrack(this)">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span class="fw-semibold text-white small">Custom AI &amp; Web Engineering</span>
+                                        <span class="font-mono-tech small" style="color:var(--chrome-mid);">05</span>
+                                    </div>
+                                    <small class="d-block" style="font-size:0.77rem; color:var(--chrome-mid);">Document AI, internal knowledge assistants &amp; bespoke Python/JS applications</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="font-mono-tech small text-uppercase mb-3 d-block" style="color: var(--chrome-bright);" data-i18n="scope_step2">
+                            2. Company Size
+                        </label>
+                        <div class="row g-2 mb-4" id="size-selector-group">
+                            <div class="col-6 col-md-3">
+                                <div class="scope-scale-btn active" data-size="1–15 Employees (Small Business)" onclick="selectCompanySize(this)">1–15 Staff</div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="scope-scale-btn" data-size="16–50 Employees (Growing SMB)" onclick="selectCompanySize(this)">16–50 Staff</div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="scope-scale-btn" data-size="51–250 Employees (Mid-Market)" onclick="selectCompanySize(this)">51–250 Staff</div>
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <div class="scope-scale-btn" data-size="250+ Employees / Multi-Site" onclick="selectCompanySize(this)">250+ / Multi-Site</div>
+                            </div>
+                        </div>
+
+                        <label class="font-mono-tech small text-uppercase mb-2 d-block" style="color: var(--chrome-bright);" data-i18n="scope_step3">
+                            3. Primary Operational Bottleneck &amp; Contact Details
+                        </label>
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <textarea class="form-control form-control-exec" id="scoperBottleneck" rows="2" placeholder="Describe your primary pain point (e.g., missed inbound calls, manual spreadsheet workflows, legacy software bottlenecks)..." oninput="updateBriefPreview()"></textarea>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control form-control-exec" id="scoperName" placeholder="Your Name &amp; Title *" oninput="updateBriefPreview()">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control form-control-exec" id="scoperCompany" placeholder="Company Name *" oninput="updateBriefPreview()">
+                            </div>
+                            <div class="col-md-4">
+                                <input type="email" class="form-control form-control-exec" id="scoperEmail" placeholder="Work Email *" oninput="updateBriefPreview()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Generated Brief & Direct Executive Action -->
+                    <div class="col-lg-5 d-flex flex-column justify-content-between">
+                        <div>
+                            <label class="font-mono-tech small text-uppercase mb-3 d-block" style="color: var(--chrome-bright);" data-i18n="scope_step4">
+                                4. Live Generated Executive Brief
+                            </label>
+                            <div class="brief-output-box mb-3">
+                                <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom border-secondary border-opacity-25">
+                                    <span class="font-mono-tech small text-white">REF: <span style="color:var(--chrome-light);">TOG-BRIEF-2026</span></span>
+                                    <span class="badge bg-dark border border-secondary text-light font-mono-tech">CONFIDENTIAL</span>
+                                </div>
+                                <pre id="liveBriefOutput" class="font-mono-tech small mb-0" style="color: var(--chrome-light); white-space: pre-wrap; font-size: 0.77rem; line-height: 1.55;"></pre>
+                            </div>
+                            <div id="scoperFeedback" class="alert alert-secondary d-none small py-2 px-3 mb-3" role="alert"></div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="button" class="btn btn-chrome" onclick="dispatchBriefMailto()" data-i18n="btn_dispatch">
+                                Send Executive Brief via Email &rarr;
+                            </button>
+                            <button type="button" class="btn btn-obsidian-outline btn-sm" onclick="copyScoperBrief()" data-i18n="btn_copy">
+                                Copy Brief to Clipboard
+                            </button>
+                            <div class="mt-2 pt-2 border-top border-secondary border-opacity-25 d-flex flex-wrap justify-content-between align-items-center small font-mono-tech" style="color: var(--chrome-mid);">
+                                <a href="mailto:jolivetti2016@gmail.com" class="text-decoration-none" style="color: var(--chrome-light);">jolivetti2016@gmail.com</a>
+                                <a href="tel:4043942490" class="text-decoration-none" style="color: var(--chrome-light);">404-394-2490</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Dark Obsidian Footer -->
+    <footer class="footer-obsidian">
+        <div class="container">
+            <div class="row align-items-center gy-4">
+                <div class="col-lg-5 text-center text-lg-start">
+                    <img src="51507_2.png"
+                         alt="The Olivetti Group"
+                         class="footer-brand-logo"
+                         onerror="this.style.display='none'; document.getElementById('footer-svg-fallback').style.display='inline-flex';">
+
+                    <div id="footer-svg-fallback" style="display:none; align-items:center; gap:12px;">
+                        <svg width="42" height="42" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="24" stroke="#e2e6ec" stroke-width="5.5" stroke-dasharray="134 17"/>
+                            <path d="M46 15L55 11L50 22Z" fill="#ffffff"/>
+                        </svg>
+                        <span class="font-serif-exec fw-bold chrome-text fs-4">THE OLIVETTI GROUP</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 text-center text-lg-start">
+                    <div class="font-mono-tech small text-uppercase text-white mb-1">// PRINCIPAL ADVISORY</div>
+                    <p class="mb-0 text-light fw-medium">Jonathan Olivetti &bull; Decatur, Georgia</p>
+                    <p class="mb-0 small" style="color: var(--chrome-mid);">
+                        <a href="https://jolivetti.github.io/" target="_blank" rel="noopener noreferrer" class="text-decoration-none" style="color: var(--chrome-light);">https://jolivetti.github.io/</a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 text-center text-lg-end">
+                    <div class="font-mono-tech small text-uppercase text-white mb-1">// DIRECT CONTACT</div>
+                    <a href="mailto:jolivetti2016@gmail.com" class="d-block text-white fw-semibold text-decoration-none mb-1">jolivetti2016@gmail.com</a>
+                    <a href="tel:4043942490" class="d-block text-decoration-none font-mono-tech" style="color: var(--chrome-light);">404-394-2490</a>
+                </div>
+            </div>
+
+            <div class="footer-divider">
+                <div class="row align-items-center gy-3">
+                    <div class="col-md-6 text-center text-md-start">
+                        &copy; <span id="current-year"></span> The Olivetti Group (Decatur, GA). All Rights Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end d-flex flex-wrap justify-content-center justify-content-md-end gap-3 font-mono-tech small">
+                        <a href="#capabilities" class="text-decoration-none" style="color: var(--chrome-mid);">Capabilities</a>
+                        <a href="#platforms" class="text-decoration-none" style="color: var(--chrome-mid);">Platforms</a>
+                        <a href="#pedigree" class="text-decoration-none" style="color: var(--chrome-mid);">Pedigree</a>
+                        <a href="#engagement-scoper" class="text-decoration-none" style="color: var(--chrome-mid);">Scope Engagement</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Deliverable Inspection Modal -->
+    <div class="modal fade modal-exec" id="specModal" tabindex="-1" aria-labelledby="specModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <span class="font-mono-tech small d-block" style="color: var(--chrome-mid);" id="specModalKicker">PRACTICE SPECIFICATION</span>
+                        <h5 class="modal-title fw-bold chrome-text" id="specModalLabel">Practice Title</h5>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <p class="text-light mb-4" id="specModalOverview"></p>
+                    <h6 class="font-mono-tech small text-uppercase mb-3 text-white">Key Architectural Deliverables &amp; Outcomes</h6>
+                    <ul class="list-unstyled mb-4" id="specModalDeliverables"></ul>
+                    <div class="p-3 rounded" style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-chrome); border-left: 3px solid #ffffff;">
+                        <div class="font-mono-tech small text-uppercase mb-1 text-white">Measurable Business Impact</div>
+                        <div class="small" style="color: var(--chrome-light);" id="specModalImpact"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-obsidian-outline btn-sm" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-chrome btn-sm" onclick="scrollToScoper()">Configure in Engagement Scoper &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5.3.3 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        // Dynamic Copyright Year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Sticky Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 40) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Practice & Platform Deliverable Specifications
+        const practiceSpecs = [
+            {
+                kicker: "PRACTICE 01 // VOICE AI & CUSTOMER CARE",
+                title: "AI Voice Agents & Customer Care Automation",
+                overview: "Deploy a custom-trained conversational AI receptionist (powered by Vapi) that answers every inbound call 24/7, qualifies prospective clients, schedules appointments, and resolves routine support inquiries without adding front-desk payroll.",
+                deliverables: [
+                    "Custom Voice Persona & Company Knowledge Base Training (Services, Pricing, Policies, FAQs)",
+                    "24/7 Inbound Call Reception, Lead Qualification & Real-Time Calendar Booking",
+                    "Automated Tier-1 Customer Care Resolution & Intelligent Warm-Transfer Escalation",
+                    "Bilingual English & Spanish Conversational Switching + Instant SMS/CRM Call Summaries"
+                ],
+                impact: "Captures 100% of after-hours and overflow calls while reducing administrative reception overhead by up to 60%."
+            },
+            {
+                kicker: "PRACTICE 02 // DIGITAL TRANSFORMATION",
+                title: "Digital Transformation & Operational Diagnostics",
+                overview: "Executive-led forensic audit of a growing company's workflows—pinpointing where disconnected spreadsheets, duplicate data entry, and manual handoffs are slowing growth and eroding margins.",
+                deliverables: [
+                    "End-to-End Operational Bottleneck & Software Stack Audit",
+                    "Prioritized 90-Day / 12-Month Digital Modernization Roadmap",
+                    "SaaS Consolidation & Vendor Contract Cost Optimization",
+                    "Clear ROI & Payback Modeling Before Capital Deployment"
+                ],
+                impact: "Eliminates redundant software licensing and manual administrative bottlenecks so leadership can focus on revenue growth."
+            },
+            {
+                kicker: "PRACTICE 03 // ARCHITECTURE & SCALABILITY",
+                title: "Enterprise Architecture & Scalability",
+                overview: "Designing clean, modular cloud, database, and API integrations that allow small and midsize companies to double client volume and headcount without operational breakdowns.",
+                deliverables: [
+                    "Resilient Cloud & Relational Database Architecture Blueprints",
+                    "Automated REST API Integrations Connecting CRM, Accounting & Operations",
+                    "Role-Based Access Control (RBAC) & Data Security Governance",
+                    "Scalable Infrastructure Standards Built for Multi-Site Expansion"
+                ],
+                impact: "Prevents costly system re-writes and operational bottlenecks as your organization scales."
+            },
+            {
+                kicker: "PRACTICE 04 // AI & WORKFLOW AUTOMATION",
+                title: "Custom AI & Workflow Automation",
+                overview: "Practical, high-ROI AI implementations tailored to small and midsize businesses—automating repetitive document processing, internal knowledge retrieval, and ticket routing without needing an internal engineering team.",
+                deliverables: [
+                    "Automated Document, Intake & Invoice Data Extraction Workflows",
+                    "Private Internal Knowledge-Base AI Assistants for Staff Onboarding & SOPs",
+                    "Intelligent Email, Form & Support Ticket Triage and Routing",
+                    "Custom Python & JavaScript Automation Pipelines"
+                ],
+                impact: "Reclaims dozens of hours per week of repetitive back-office labor with auditable, human-in-the-loop reliability."
+            },
+            {
+                kicker: "FLAGSHIP PLATFORM // OLIVETTI LEGAL CRM",
+                title: "Olivetti Legal CRM & Case Lifecycle Engine (Python / Django)",
+                overview: "A turnkey, production-proven CRM and case workflow platform engineered for personal injury, property damage, and litigation practices—available for direct licensing or white-label deployment.",
+                deliverables: [
+                    "Bilingual (English / Spanish) Prospective Client Intake & Qualification Workflows",
+                    "End-to-End Case Lifecycle Pipeline: Intake, Medical Treatment, Property Damage, Demand & Settlement",
+                    "Insurance Carrier, Adjuster & Lienholder Tracking with Automated Status Updates",
+                    "Granular Role-Based Security (Managing Partner, Attorney, Paralegal, Intake) & Centralized Document Vault"
+                ],
+                impact: "Replaces fragmented spreadsheets and overpriced generic legal tools with a fast, bilingual platform built to accelerate case resolution."
+            }
+        ];
+
+        function openSpecModal(index) {
+            const spec = practiceSpecs[index];
+            document.getElementById('specModalKicker').textContent = spec.kicker;
+            document.getElementById('specModalLabel').textContent = spec.title;
+            document.getElementById('specModalOverview').textContent = spec.overview;
+            document.getElementById('specModalImpact').textContent = spec.impact;
+
+            const listEl = document.getElementById('specModalDeliverables');
+            listEl.innerHTML = '';
+            spec.deliverables.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'mb-2 d-flex align-items-start gap-2 text-light small';
+                li.innerHTML = `<span style="color:#ffffff; font-weight:bold;">&#9670;</span><span>${item}</span>`;
+                listEl.appendChild(li);
+            });
+
+            const modal = new bootstrap.Modal(document.getElementById('specModal'));
+            modal.show();
+        }
+
+        function scrollToScoper() {
+            const specModalEl = document.getElementById('specModal');
+            const modalInstance = bootstrap.Modal.getInstance(specModalEl);
+            if (modalInstance) modalInstance.hide();
+            document.getElementById('engagement-scoper').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Pre-select Track from Proprietary Platforms Section & Smooth Scroll
+        function selectPlatformTrack(trackName) {
+            const cards = document.querySelectorAll('#track-selector-grid .scope-checkbox-card');
+            cards.forEach(card => {
+                if (card.getAttribute('data-track') === trackName) {
+                    card.classList.add('selected');
+                } else {
+                    card.classList.remove('selected');
+                }
+            });
+            updateBriefPreview();
+            document.getElementById('engagement-scoper').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Engagement Scoper State & Functions
+        function selectTrack(cardEl) {
+            document.querySelectorAll('#track-selector-grid .scope-checkbox-card').forEach(c => c.classList.remove('selected'));
+            cardEl.classList.add('selected');
+            updateBriefPreview();
+        }
+
+        function selectCompanySize(btnEl) {
+            document.querySelectorAll('#size-selector-group .scope-scale-btn').forEach(b => b.classList.remove('active'));
+            btnEl.classList.add('active');
+            updateBriefPreview();
+        }
+
+        function buildFormattedBrief() {
+            const selectedTrackEl = document.querySelector('#track-selector-grid .scope-checkbox-card.selected');
+            const selectedSizeEl = document.querySelector('#size-selector-group .scope-scale-btn.active');
+
+            const track = selectedTrackEl ? selectedTrackEl.getAttribute('data-track') : 'AI Voice Agent / Call Center';
+            const size = selectedSizeEl ? selectedSizeEl.getAttribute('data-size') : '1–15 Employees (Small Business)';
+            const bottleneck = document.getElementById('scoperBottleneck').value.trim() || 'Not specified yet — requesting executive diagnostic call.';
+            const name = document.getElementById('scoperName').value.trim() || '[Your Name & Title]';
+            const company = document.getElementById('scoperCompany').value.trim() || '[Company Name]';
+            const email = document.getElementById('scoperEmail').value.trim() || '[Work Email]';
+
+            return {
+                track,
+                size,
+                company,
+                text: `THE OLIVETTI GROUP — EXECUTIVE ENGAGEMENT BRIEF
+--------------------------------------------------
+ENGAGEMENT TRACK : ${track}
+COMPANY SIZE     : ${size}
+CONTACT          : ${name} (${email})
+ORGANIZATION     : ${company}
+
+PRIMARY OPERATIONAL BOTTLENECK:
+${bottleneck}
+
+NEXT STEP:
+Requesting confidential briefing with Jonathan Olivetti (404-394-2490).`
+            };
+        }
+
+        function updateBriefPreview() {
+            const brief = buildFormattedBrief();
+            document.getElementById('liveBriefOutput').textContent = brief.text;
+        }
+
+        function showScoperFeedback(message) {
+            const box = document.getElementById('scoperFeedback');
+            box.textContent = message;
+            box.classList.remove('d-none');
+        }
+
+        function dispatchBriefMailto() {
+            const brief = buildFormattedBrief();
+            const subject = encodeURIComponent(`The Olivetti Group — ${brief.track} Inquiry (${brief.company})`);
+            const body = encodeURIComponent(brief.text);
+            showScoperFeedback('Opening your email client addressed to jolivetti2016@gmail.com...');
+            window.location.href = `mailto:jolivetti2016@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        function copyScoperBrief() {
+            const brief = buildFormattedBrief();
+            const tempTextarea = document.createElement('textarea');
+            tempTextarea.value = brief.text;
+            tempTextarea.style.position = 'fixed';
+            tempTextarea.style.opacity = '0';
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            tempTextarea.setSelectionRange(0, 99999);
+            try {
+                document.execCommand('copy');
+                showScoperFeedback('Executive brief copied to clipboard.');
+            } catch (err) {
+                showScoperFeedback('Unable to copy automatically — please select and copy the brief above.');
+            }
+            document.body.removeChild(tempTextarea);
+        }
+
+        // Initialize Brief Preview on Load
+        updateBriefPreview();
+
+        // Bilingual EN | ES Dictionary
+        const translations = {
+            en: {
+                nav_capabilities: "Capabilities",
+                nav_platforms: "Proprietary Platforms",
+                nav_pedigree: "Executive Pedigree",
+                nav_scoper: "Scope Engagement",
+                nav_cta: "Scope Engagement",
+                hero_badge: "Executive Technology Advisory & AI Automation",
+                hero_title: "Translating Operational Bottlenecks Into Scalable Technological Gains",
+                hero_subtitle: "The Olivetti Group advises growing small-to-midsize businesses on digital transformation, 24/7 AI voice receptionists, workflow automation, and resilient cloud architecture—turning operational growing pains into measurable bottom-line ROI.",
+                hero_btn_primary: "Scope an Engagement",
+                hero_btn_secondary: "Explore AI & Software Platforms",
+                metric_1: "Annual Enterprise Revenue Supported — Prior Executive Pedigree",
+                metric_2: "Enterprise Technology & Digital Transformation Leadership",
+                metric_3: "Distributed Field & Operational Endpoints Architected",
+                metric_4: "Autonomous AI Voice & Workflow Automation Uptime",
+                cap_kicker: "// CORE CONSULTANCY CAPABILITIES",
+                cap_heading: "Practical AI & Architecture Built for Growing Companies",
+                cap_lead: "We bridge executive business judgment with modern AI and cloud engineering—diagnosing operational bottlenecks and implementing high-ROI solutions without enterprise bloat.",
+                p1_title: "AI Voice Agents & Customer Care Automation",
+                p1_desc: "Custom inbound and outbound conversational AI receptionists (Vapi-powered) that answer calls 24/7, qualify leads, schedule appointments, resolve Tier-1 customer inquiries, and escalate urgent tickets to cut front-desk overhead.",
+                p2_title: "Digital Transformation & Operational Diagnostics",
+                p2_desc: "Executive audits for growing businesses to eliminate disconnected spreadsheets, duplicate data entry, and manual handoffs—delivering a clear, prioritized modernization roadmap calibrated to real ROI.",
+                p3_title: "Enterprise Architecture & Scalability",
+                p3_desc: "Designing resilient cloud, database, and API integrations so small and midsize companies can double their client volume and headcount without breaking daily operations or outgrowing their core stack.",
+                p4_title: "Custom AI & Workflow Automation",
+                p4_desc: "Practical AI deployment—automated document processing, internal knowledge-base assistants, and intelligent ticket routing that eliminate repetitive administrative labor without requiring an in-house IT department.",
+                btn_inspect: "INSPECT DELIVERABLES",
+                plat_kicker: "// PROPRIETARY SOFTWARE & TURNKEY PLATFORMS",
+                plat_heading: "Production-Ready Software & Autonomous Voice Systems",
+                plat_lead: "We don't just advise from slide decks—we engineer, deploy, and license turnkey software platforms proven in live commercial environments.",
+                plat_1_badge: "FLAGSHIP PRODUCT // 01",
+                plat_1_title: "Olivetti Legal CRM & Case Lifecycle Engine",
+                plat_1_desc: "Production-built Python/Django platform engineered for law firms and specialized practices—streamlining bilingual client intake, insurance claims, and end-to-end case milestones without bloated legacy software.",
+                plat_1_f1: "<strong>Bilingual Client Intake (EN/ES):</strong> Structured prospective client qualification and seamless English/Spanish intake portals.",
+                plat_1_f2: "<strong>End-to-End Insurance &amp; Property Damage Tracking:</strong> Milestone management from initial incident through medical treatment, adjuster negotiation, and settlement.",
+                plat_1_f3: "<strong>Automated Client Communications:</strong> Proactive SMS/email status updates that reduce inbound \"what's my case status?\" calls.",
+                plat_1_f4: "<strong>Role-Based Security &amp; Licensing:</strong> Granular permissions for managing partners, attorneys, and paralegals—available for turnkey licensing or white-label deployment.",
+                plat_1_cta: "License Olivetti Legal CRM &rarr;",
+                plat_1_specs: "System Architecture",
+                plat_2_badge: "FLAGSHIP PRODUCT // 02",
+                plat_2_title: "Autonomous AI Call Center & Voice Receptionist",
+                plat_2_desc: "Turnkey conversational voice AI deployment tailored to service businesses, medical offices, contractors, and legal practices to capture missed calls, automate customer support, and slash front-desk overhead.",
+                plat_2_f1: "<strong>24/7 Instant Inbound Call Answering:</strong> Natural-sounding voice agents trained on your company's exact services, pricing policies, and FAQs—zero hold times.",
+                plat_2_f2: "<strong>Automated Appointment Booking &amp; Lead Capture:</strong> Real-time calendar scheduling, caller qualification, and instant CRM/SMS summaries sent to your team.",
+                plat_2_f3: "<strong>Tier-1 Customer Care &amp; Smart Escalation:</strong> Resolves routine customer inquiries autonomously while warm-transferring urgent calls to on-call staff.",
+                plat_2_f4: "<strong>Bilingual English &amp; Spanish Fluency:</strong> Seamlessly switches languages mid-call to serve diverse client bases without hiring additional call-center headcount.",
+                plat_2_cta: "Deploy AI Voice Receptionist &rarr;",
+                plat_2_specs: "Voice Specs",
+                cred_kicker: "// CREDENTIALS & GOVERNANCE PEDIGREE",
+                cred_heading: "Executive Discipline Backed by Hands-On Engineering",
+                cred_lead: "Combining formal computer science engineering credentials with 26+ years of enterprise operational leadership, P&L governance, and vendor negotiation authority.",
+                c1_title: "Harvard CS50W",
+                c1_sub: "Web Programming with Python & JavaScript",
+                c2_title: "A.A.S. in Business Management",
+                c2_sub: "Gwinnett Technical College",
+                c3_title: "Bilingual Executive Leadership",
+                c3_sub: "Fluent English & Spanish Operations",
+                c4_title: "Enterprise Governance & Vendor Negotiation",
+                c4_sub: "26+ Years Experience ($1B+ Scale Pedigree)",
+                scope_kicker: "// INTERACTIVE ENGAGEMENT SCOPER",
+                scope_heading: "Configure Your Executive Advisory & AI Brief",
+                scope_lead: "Select your primary engagement track, company size, and operational bottleneck below to generate a structured executive brief and dispatch it directly to Jonathan Olivetti.",
+                scope_step1: "1. Select Primary Engagement Track",
+                scope_step2: "2. Company Size",
+                scope_step3: "3. Primary Operational Bottleneck & Contact Details",
+                scope_step4: "4. Live Generated Executive Brief",
+                btn_dispatch: "Send Executive Brief via Email &rarr;",
+                btn_copy: "Copy Brief to Clipboard"
+            },
+            es: {
+                nav_capabilities: "Capacidades",
+                nav_platforms: "Plataformas Propias",
+                nav_pedigree: "Trayectoria Ejecutiva",
+                nav_scoper: "Definir Alcance",
+                nav_cta: "Definir Alcance",
+                hero_badge: "Asesoría Tecnológica Ejecutiva y Automatización con IA",
+                hero_title: "Transformando Cuellos de Botella Operativos en Ganancias Tecnológicas Escalables",
+                hero_subtitle: "The Olivetti Group asesora a pequeñas y medianas empresas en crecimiento en transformación digital, recepcionistas de voz con IA 24/7, automatización de flujos de trabajo y arquitectura en la nube resiliente—convirtiendo retos operativos en retorno de inversión medible.",
+                hero_btn_primary: "Definir un Proyecto",
+                hero_btn_secondary: "Explorar Plataformas de IA y Software",
+                metric_1: "En Ingresos Empresariales Respaldados — Trayectoria Ejecutiva Previa",
+                metric_2: "Años de Liderazgo en Tecnología Empresarial y Transformación Digital",
+                metric_3: "Puntos Operativos y de Campo Distribuidos Arquitectados",
+                metric_4: "Disponibilidad Autónoma de Voz con IA y Automatización de Flujos",
+                cap_kicker: "// CAPACIDADES PRINCIPALES DE CONSULTORÍA",
+                cap_heading: "IA Práctica y Arquitectura Diseñadas para Empresas en Crecimiento",
+                cap_lead: "Unimos criterio ejecutivo de negocio con ingeniería moderna de IA y nube—diagnosticando cuellos de botella operativos e implementando soluciones de alto retorno sin complejidad innecesaria.",
+                p1_title: "Agentes de Voz con IA y Automatización de Atención al Cliente",
+                p1_desc: "Recepcionistas conversacionales con IA (impulsados por Vapi) que atienden llamadas entrantes y salientes 24/7, califican prospectos, agendan citas, resuelven consultas de primer nivel y escalan casos urgentes para reducir costos administrativos.",
+                p2_title: "Transformación Digital y Diagnóstico Operativo",
+                p2_desc: "Auditorías ejecutivas para empresas en crecimiento que eliminan hojas de cálculo desconectadas, doble captura de datos y procesos manuales—entregando una hoja de ruta de modernización priorizada y enfocada en ROI.",
+                p3_title: "Arquitectura Empresarial y Escalabilidad",
+                p3_desc: "Diseño de integraciones resilientes en la nube, bases de datos y APIs para que pequeñas y medianas empresas puedan duplicar su volumen de clientes y personal sin colapsar su operación diaria.",
+                p4_title: "IA a Medida y Automatización de Flujos de Trabajo",
+                p4_desc: "Implementación práctica de IA—procesamiento automatizado de documentos, asistentes internos de conocimiento y enrutamiento inteligente de solicitudes que eliminan trabajo repetitivo sin requerir un departamento interno de TI.",
+                btn_inspect: "VER ENTREGABLES",
+                plat_kicker: "// SOFTWARE PROPIO Y PLATAFORMAS LLAVE EN MANO",
+                plat_heading: "Software Listo para Producción y Sistemas Autónomos de Voz",
+                plat_lead: "No solo asesoramos con presentaciones—diseñamos, desplegamos y licenciamos plataformas de software llave en mano probadas en entornos comerciales reales.",
+                plat_1_badge: "PRODUCTO INSIGNIA // 01",
+                plat_1_title: "Olivetti Legal CRM y Motor de Ciclo de Vida de Casos",
+                plat_1_desc: "Plataforma desarrollada en Python/Django para firmas legales y prácticas especializadas—optimizando la admisión bilingüe de clientes, reclamos de seguros y etapas del caso sin software complejo ni costoso.",
+                plat_1_f1: "<strong>Admisión Bilingüe de Clientes (EN/ES):</strong> Calificación estructurada de prospectos y portales de ingreso en inglés y español.",
+                plat_1_f2: "<strong>Seguimiento Integral de Seguros y Daños Materiales:</strong> Gestión de hitos desde el incidente inicial hasta tratamiento médico, negociación con ajustadores y acuerdo.",
+                plat_1_f3: "<strong>Comunicaciones Automatizadas al Cliente:</strong> Actualizaciones proactivas por SMS y correo que reducen llamadas repetitivas de seguimiento.",
+                plat_1_f4: "<strong>Seguridad por Roles y Licenciamiento:</strong> Permisos granulares para socios, abogados y paralegales—disponible bajo licencia llave en mano o marca blanca.",
+                plat_1_cta: "Licenciar Olivetti Legal CRM &rarr;",
+                plat_1_specs: "Arquitectura del Sistema",
+                plat_2_badge: "PRODUCTO INSIGNIA // 02",
+                plat_2_title: "Centro de Llamadas Autónomo con IA y Recepcionista Virtual",
+                plat_2_desc: "Implementación llave en mano de voz conversacional con IA para empresas de servicios, consultorios médicos, contratistas y bufetes legales para capturar llamadas perdidas, automatizar soporte y reducir costos de recepción.",
+                plat_2_f1: "<strong>Atención Inmediata de Llamadas 24/7:</strong> Agentes de voz naturales entrenados con los servicios, tarifas y preguntas frecuentes de su empresa—sin tiempos de espera.",
+                plat_2_f2: "<strong>Agendamiento Automático y Captura de Prospectos:</strong> Programación en calendario en tiempo real, calificación de llamadas y resúmenes instantáneos por CRM/SMS.",
+                plat_2_f3: "<strong>Atención Nivel 1 y Escalamiento Inteligente:</strong> Resuelve consultas frecuentes de forma autónoma y transfiere llamadas urgentes al personal de guardia.",
+                plat_2_f4: "<strong>Fluidez Bilingüe en Inglés y Español:</strong> Cambia de idioma durante la llamada para atender a toda su cartera de clientes sin contratar más personal.",
+                plat_2_cta: "Implementar Recepcionista IA &rarr;",
+                plat_2_specs: "Especificaciones de Voz",
+                cred_kicker: "// CREDENCIALES Y TRAYECTORIA DE GOBERNANZA",
+                cred_heading: "Disciplina Ejecutiva Respaldada por Ingeniería Práctica",
+                cred_lead: "Combinando formación formal en ingeniería de software con más de 26 años de liderazgo operativo empresarial, gobernanza financiera y negociación estratégica con proveedores.",
+                c1_title: "Harvard CS50W",
+                c1_sub: "Programación Web con Python y JavaScript",
+                c2_title: "A.A.S. en Gestión Empresarial",
+                c2_sub: "Gwinnett Technical College",
+                c3_title: "Liderazgo Ejecutivo Bilingüe",
+                c3_sub: "Operaciones Fluidas en Inglés y Español",
+                c4_title: "Gobernanza Empresarial y Negociación",
+                c4_sub: "+26 Años de Experiencia (Escala de +$1B)",
+                scope_kicker: "// CONFIGURADOR INTERACTIVO DE PROYECTOS",
+                scope_heading: "Configure su Resumen Ejecutivo de Asesoría e IA",
+                scope_lead: "Seleccione su línea de proyecto, tamaño de empresa y principal cuello de botella operativo para generar un resumen ejecutivo estructurado y enviarlo directamente a Jonathan Olivetti.",
+                scope_step1: "1. Seleccione la Línea Principal del Proyecto",
+                scope_step2: "2. Tamaño de la Empresa",
+                scope_step3: "3. Principal Cuello de Botella Operativo y Datos de Contacto",
+                scope_step4: "4. Resumen Ejecutivo Generado en Vivo",
+                btn_dispatch: "Enviar Resumen Ejecutivo por Correo &rarr;",
+                btn_copy: "Copiar Resumen al Portapapeles"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.getElementById('btn-lang-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-lang-es').classList.toggle('active', lang === 'es');
+
+            const dict = translations[lang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.innerHTML = dict[key];
+                }
+            });
+        }
+
+        // Subtle Animated Brushed-Chrome Network Canvas in Hero
+        (function initHeroCanvas() {
+            const canvas = document.getElementById('hero-network-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height, particles;
+
+            function resize() {
+                width = canvas.width = canvas.parentElement.offsetWidth;
+                height = canvas.height = canvas.parentElement.offsetHeight;
+                createParticles();
+            }
+
+            function createParticles() {
+                const count = Math.min(Math.floor((width * height) / 19000), 58);
+                particles = [];
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: Math.random() * width,
+                        y: Math.random() * height,
+                        vx: (Math.random() - 0.5) * 0.3,
+                        vy: (Math.random() - 0.5) * 0.3,
+                        r: Math.random() * 1.7 + 0.7,
+                        bright: Math.random() > 0.72
+                    });
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, width, height);
+
+                for (let i = 0; i < particles.length; i++) {
+                    const p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    if (p.x < 0 || p.x > width) p.vx *= -1;
+                    if (p.y < 0 || p.y > height) p.vy *= -1;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = p.bright ? 'rgba(255, 255, 255, 0.55)' : 'rgba(143, 150, 163, 0.32)';
+                    ctx.fill();
+
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const p2 = particles[j];
+                        const dx = p.x - p2.x;
+                        const dy = p.y - p2.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 145) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            const alpha = (1 - dist / 145) * 0.16;
+                            ctx.strokeStyle = `rgba(226, 230, 236, ${alpha})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(draw);
+            }
+
+            window.addEventListener('resize', resize);
+            window.addEventListener('load', () => {
+                resize();
+                draw();
+            });
+            resize();
+            draw();
+        })();
+    </script>
+</body>
+</html>
+```
